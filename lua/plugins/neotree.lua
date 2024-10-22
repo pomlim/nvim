@@ -150,11 +150,12 @@ return {
           ['<2-LeftMouse>'] = 'open',
           ['<cr>'] = 'open',
           ['<esc>'] = 'cancel', -- close preview or floating neo-tree window
-          ['P'] = { 'toggle_preview', config = { use_float = true, use_image_nvim = true } },
+          ['<C-c>'] = 'cancel', -- close preview or floating neo-tree window
+          ['p'] = { 'toggle_preview', config = { use_float = true, use_image_nvim = true } },
           -- Read `# Preview Mode` for more information
           ['l'] = 'focus_preview',
-          ['S'] = 'open_split',
-          ['s'] = 'open_vsplit',
+          ['<C-s>'] = 'open_split',
+          ['<C-v>'] = 'open_vsplit',
           -- ["S"] = "split_with_window_picker",
           -- ["s"] = "vsplit_with_window_picker",
           ['t'] = 'open_tabnew',
@@ -162,10 +163,13 @@ return {
           -- ["t"] = "open_tab_drop",
           ['w'] = 'open_with_window_picker',
           --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
+          ['<C-f>'] = 'open',
+          ['<C-b>'] = 'close_node',
+          ['h'] = 'close_node',
           ['C'] = 'close_node',
           -- ['C'] = 'close_all_subnodes',
           ['z'] = 'close_all_nodes',
-          --["Z"] = "expand_all_nodes",
+          ["Z"] = "expand_all_nodes",
           ['a'] = {
             'add',
             -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
@@ -176,10 +180,10 @@ return {
           },
           ['A'] = 'add_directory', -- also accepts the optional config.show_path option like "add". this also supports BASH style brace expansion.
           ['d'] = 'delete',
-          ['r'] = 'rename',
+          ['R'] = 'rename',
           ['y'] = 'copy_to_clipboard',
           ['x'] = 'cut_to_clipboard',
-          ['p'] = 'paste_from_clipboard',
+          ['P'] = 'paste_from_clipboard',
           ['c'] = 'copy', -- takes text input for destination, also accepts the optional config.show_path option like "add":
           -- ["c"] = {
           --  "copy",
@@ -189,7 +193,7 @@ return {
           --}
           ['m'] = 'move', -- takes text input for destination, also accepts the optional config.show_path option like "add".
           ['q'] = 'close_window',
-          ['R'] = 'refresh',
+          ['r'] = 'refresh',
           ['?'] = 'show_help',
           ['<'] = 'prev_source',
           ['>'] = 'next_source',
@@ -250,7 +254,7 @@ return {
             ['<c-x>'] = 'clear_filter',
             ['[g'] = 'prev_git_modified',
             [']g'] = 'next_git_modified',
-            ['o'] = { 'show_help', nowait = false, config = { title = 'Order by', prefix_key = 'o' } },
+            -- ['o'] = { 'show_help', nowait = false, config = { title = 'Order by', prefix_key = 'o' } },
             ['oc'] = { 'order_by_created', nowait = false },
             ['od'] = { 'order_by_diagnostics', nowait = false },
             ['og'] = { 'order_by_git_status', nowait = false },
@@ -305,7 +309,7 @@ return {
             ['gc'] = 'git_commit',
             ['gp'] = 'git_push',
             ['gg'] = 'git_commit_and_push',
-            ['o'] = { 'show_help', nowait = false, config = { title = 'Order by', prefix_key = 'o' } },
+            -- ['o'] = { 'show_help', nowait = false, config = { title = 'Order by', prefix_key = 'o' } },
             ['oc'] = { 'order_by_created', nowait = false },
             ['od'] = { 'order_by_diagnostics', nowait = false },
             ['om'] = { 'order_by_modified', nowait = false },
@@ -320,7 +324,7 @@ return {
     vim.cmd [[nnoremap \ :Neotree reveal<cr>]]
     vim.keymap.set('n', '<leader>e', ':Neotree position=right<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', '<M-b>', ':Neotree toggle position=right<CR><C-w>h', { noremap = true, silent = true })
-    vim.keymap.set('n', '<M-[>', ':Neotree close<CR>', { noremap = true, silent = true })
+    vim.keymap.set('n', '<M-o>', ':Neotree close<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', '<leader>gg', ':Neotree float git_status<CR>', { noremap = true, silent = true }) -- open git status window
   end,
 }

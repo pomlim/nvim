@@ -13,6 +13,7 @@ return {
         -- Load the colorscheme
         require("auto-session").setup({
             vim.keymap.set("n", "<leader><leader>r", ":Autosession search<CR>"),
+            vim.keymap.set("n", "<leader><leader><leader>rd", ":Autosession delete<CR>"),
         })
     end,
 }

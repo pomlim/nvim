@@ -19,6 +19,7 @@ vim.opt.relativenumber = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.scrolloff = 7
+vim.opt.hidden = false
 vim.cmd 'set wildcharm=<tab>'
 vim.cmd 'set shortmess-=S'
 
@@ -28,7 +29,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'html', 'javascript', 'typescriptreact' }, -- Include js and tsx patterns
+  pattern = { 'html', 'javascript', 'typescriptreact', 'lua' }, -- Include js, tsx , lua patterns
   callback = function()
     vim.opt_local.shiftwidth = 2
     vim.opt_local.tabstop = 2

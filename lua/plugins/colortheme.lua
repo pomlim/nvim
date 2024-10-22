@@ -6,7 +6,7 @@ return {
         -- Load the colorscheme
         require("onedarkpro").setup({
             colors = {
-                onedark_dark = { bg = "#1f1f1f" }, -- yellow
+                onedark_dark = { bg = "#1f1f1f" }, -- Dark gray
             }
         })
         vim.cmd("colorscheme onedark_dark")

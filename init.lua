@@ -25,5 +25,12 @@ require('lazy').setup {
   require 'plugins.surround',
   require 'plugins.target',
   require 'plugins.autopairs',
-  -- require 'plugins.harpoon'
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
+  require 'plugins.harpoon',
+  require 'plugins.gitsigns',
+  require 'plugins.fugitive',
 }
