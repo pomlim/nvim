@@ -29,7 +29,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'html', 'javascript', 'typescriptreact', 'lua' }, -- Include js, tsx , lua patterns
+  pattern = { 'html', 'javascript', 'typescriptreact', 'lua', 'typescript', 'tsx' }, -- Include js, tsx , lua patterns
   callback = function()
     vim.opt_local.shiftwidth = 2
     vim.opt_local.tabstop = 2

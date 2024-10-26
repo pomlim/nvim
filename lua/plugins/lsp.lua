@@ -162,7 +162,9 @@ return {
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
-      ts_ls = {},
+      ts_ls = {
+        capabilities = {},
+      },
       ruff = {},
       mypy = {},
       -- pylsp = {
@@ -183,6 +185,8 @@ return {
       -- },
       html = { filetypes = { 'html', 'twig', 'hbs' } },
       cssls = {},
+      somesass_ls = {},
+      emmet_ls = {},
       tailwindcss = {},
       dockerls = {},
       sqlls = {},
@@ -228,10 +232,13 @@ return {
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
+      'eslint-lsp',
       'stylua', -- Used to format Lua code
+      'prettierd', -- ts/js formatter
       'ruff',
       'pyright',
       'mypy',
+      'typescript-language-server',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

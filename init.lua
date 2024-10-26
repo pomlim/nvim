@@ -33,4 +33,9 @@ require('lazy').setup {
   require 'plugins.harpoon',
   require 'plugins.gitsigns',
   require 'plugins.fugitive',
+  require 'plugins.autotag',
+  require 'plugins.todo-comments',
+  require 'plugins.indent-blankline',
+  require 'plugins.vim-maximizer',
+  require 'plugins.colorizer',
 }

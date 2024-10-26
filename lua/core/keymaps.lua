@@ -9,15 +9,15 @@ vim.cmd 'set <M-b>=\\eb'
 vim.cmd 'set <M-o>=\\eo'
 vim.cmd 'set <M-d>=\\ed'
 vim.cmd 'set <M-f>=\\ef'
+vim.cmd 'set <M-q>=\\eq'
 -- Save and quit shortcut
 vim.keymap.set('n', '<leader>w', ':noa w<CR>')
 vim.keymap.set('n', '<leader><leader>w', vim.cmd.w)
 vim.keymap.set('n', '<leader><leader>q', vim.cmd.qa)
-vim.keymap.set('n', '<leader>x', vim.cmd.wq)
+vim.keymap.set('n', '<leader>x', vim.cmd.bd)
 -- Tab as End key
 vim.keymap.set('n', '<C-j>', '<C-i>') -- Resolve ctrl+i automatically map to tab key
-vim.keymap.set('n', '<tab>', 'g_')
-vim.keymap.set('v', '<tab>', 'g_')
+vim.keymap.set({ 'n', 'v' }, '<Tab>', 'g_', { noremap = true, silent = true })
 -- Navigate to back and forward
 vim.keymap.set('n', '<M-d>', '<C-o>')
 vim.keymap.set('n', '<M-f>', '<C-i>')
@@ -72,13 +72,19 @@ vim.keymap.set('n', '<leader>gw', '<cmd>set wrap!<CR>')
 vim.keymap.set('n', 'cd', ':')
 vim.keymap.set('n', 'vae', 'ggVG')
 vim.keymap.set('n', 'ss', 's')
+vim.keymap.set('n', 'sf', 'F')
+vim.keymap.set('n', 'st', 'T')
+vim.keymap.set('n', '33j', '6j')
+vim.keymap.set('n', '33k', '6k')
 -- Jump after symbol
 vim.keymap.set('n', '<leader>9', 'f(w')
 vim.keymap.set('n', '<leader>,', 'f,w')
 vim.keymap.set('n', '<leader>a', 'f<w')
-vim.keymap.set('n', '<leader>.', 'f.w')
+vim.keymap.set('n', '<leader>.', 'f>w')
 vim.keymap.set('n', '<leader>[', 'f{w')
 vim.keymap.set('n', '<leader>r', 'f[w')
 vim.keymap.set('n', '<leader>-', 'f_l')
 vim.keymap.set('n', '<leader>=', 'f=w')
 vim.keymap.set('n', '<leader>c', 'f{w')
+vim.keymap.set('n', '<leader>;', 'f:w')
+
